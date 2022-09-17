@@ -8,7 +8,7 @@ describe('ДЗ 5.1 - Фильтр городов', () => {
   let filterInput;
   let filterResult;
 
-  beforeAll(() => filterPage.loadTowns());
+  beforeAll(() => filterPage.loadtowns());
 
   describe('Функциональное тестирование', () => {
     describe('isMatching', () => {
@@ -20,15 +20,15 @@ describe('ДЗ 5.1 - Фильтр городов', () => {
         expect(!filterPage.isMatching('Moscow', 'Berlin'));
       });
     });
-    describe('loadTowns', () => {
+    describe('loadtowns', () => {
       it('должна возвращать Promise', () => {
-        const result = filterPage.loadTowns();
+        const result = filterPage.loadtowns();
         expect(result).toBeInstanceOf(Promise);
       });
 
       it('Promise должен разрешаться массивом из городов', (done) => {
         /* eslint-disable max-nested-callbacks */
-        const result = filterPage.loadTowns();
+        const result = filterPage.loadtowns();
 
         result
           .then((towns) => {

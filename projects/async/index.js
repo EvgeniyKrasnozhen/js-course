@@ -33,7 +33,7 @@ const homeworkContainer = document.querySelector('#app');
 Массив городов можно получить отправив асинхронный запрос по адресу
 https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json
 */
-function loadTowns() {
+function loadtowns() {
   const a = loadAndSortTowns();
   return a;
 }
@@ -65,15 +65,15 @@ const filterInput = homeworkContainer.querySelector('#filter-input');
 /* Блок с результатами поиска */
 const filterResult = homeworkContainer.querySelector('#filter-result');
 
-loadTowns().then((sortTowns) => {
+loadtowns().then((sorttowns) => {
   filterBlock.style.display = 'block';
   loadingBlock.style.display = 'none';
   loadingFailedBlock.style.display = 'none';
   filterInput.addEventListener('input', function (e) {
     const chunk = e.target.value;
     filterResult.textContent = '';
-    for (let i = 0; i < sortTowns.length; i++) {
-      const item = sortTowns[i].name;
+    for (let i = 0; i < sorttowns.length; i++) {
+      const item = sorttowns[i].name;
       if (isMatching(item, chunk)) {
         const createDiv = document.createElement('div');
         createDiv.innerHTML = item;
@@ -86,7 +86,7 @@ loadTowns().then((sortTowns) => {
   });
 });
 retryButton.addEventListener('click', () => {
-  loadTowns();
+  loadtowns();
 });
 
-export { loadTowns, isMatching };
+export { loadtowns, isMatching };
